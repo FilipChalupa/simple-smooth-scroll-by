@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>scrollBy</title>
+	<style>
+		main {
+			font-family: sans-serif;
+			max-width: 40rem;
+			margin: 0 auto;
+			font-size: 3em;
+		}
+
+		button {
+			font-size: 0.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1>scrollBy</h1>
+		<nav>
+			<button data-by="200">Scroll by 200 px</button>
+			<button data-by="400">Scroll by 400 px</button>
+			<button data-by="700">Scroll by 700 px</button>
+			<button data-by="1000">Scroll by 1000 px</button>
+			<button data-by="1500">Scroll by 1500 px</button>
+			<button data-by="2200">Scroll by 2200 px</button>
+			<button data-by="3000">Scroll by 3000 px</button>
+			<button data-by="5000">Scroll by 5000 px</button>
+			<button data-by="10000">Scroll by 10000 px</button>
+		</nav>
+		<h2>Chapter 1</h2>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia odit dolorum corporis expedita
+			velit dolor omnis,
+			temporibus exercitationem accusamus, cum ducimus cumque ex autem voluptate dolores. Maiores fuga quia assumenda.
+		</p>
+		<h2>Chapter 2</h2>
+		<p>Dolor, eius voluptatem est laboriosam molestias enim porro, nemo amet voluptate quis similique
+			praesentium dicta
+			eum alias iusto repellat ipsum officia consequatur! Vero praesentium mollitia dicta incidunt ipsum rem cumque.</p>
+		<h2>Chapter 3</h2>
+		<p>Non commodi similique nisi, assumenda pariatur asperiores. Est magni labore sit debitis dicta
+			ullam, impedit
+			rerum non deleniti ex deserunt exercitationem enim quod ut dolores veniam. Nostrum laborum quod aut?</p>
+		<h2>Chapter 4</h2>
+		<p>Aperiam dolores quasi debitis porro modi deleniti, incidunt voluptatum natus repellendus itaque
+			error accusantium
+			magni fuga beatae praesentium ipsam, cum vero soluta voluptas eius veritatis rem hic minus? Quam, eveniet?</p>
+		<h2>Chapter 5</h2>
+		<p>Quia ut reiciendis eligendi earum magnam, quam aperiam est distinctio aspernatur molestias quod
+			minima ab! Illum
+			perferendis dicta cupiditate et inventore consectetur dolores non accusamus expedita, sint corrupti quibusdam
+			tempore.</p>
+		<h2>Chapter 6</h2>
+		<p>Incidunt aperiam at, quisquam modi quis, quo atque a dicta sunt quibusdam aliquid voluptas illum
+			distinctio vero
+			assumenda exercitationem corrupti, praesentium minus hic veritatis deserunt dolorem? Quia sit reiciendis tempore.
+		</p>
+		<h2>Chapter 7</h2>
+		<p>Autem ipsam natus ea eveniet odit quae earum pariatur distinctio, excepturi veritatis, tempore non
+			nostrum
+			aliquam, nam fugiat laborum libero veniam tempora omnis aperiam. Iusto illum perferendis consequatur! Incidunt,
+			esse!</p>
+		<h2>Chapter 8</h2>
+		<p>Reprehenderit voluptates explicabo ex sapiente, assumenda fuga est, ipsum minus odio doloremque
+			consectetur! Sint
+			perspiciatis beatae, quidem porro itaque libero est cumque at! Quisquam quis repellat molestias, dignissimos
+			consequatur natus.</p>
+		<h2>Chapter 9</h2>
+		<p>Tempora cumque facilis tenetur doloremque possimus quibusdam aliquam nesciunt molestiae laudantium
+			delectus,
+			iusto quidem alias sequi dolores tempore! Necessitatibus voluptatibus reiciendis ipsum molestiae consectetur
+			accusamus maxime, laboriosam aliquid autem quibusdam?</p>
+		<h2>Chapter 10</h2>
+		<p>Neque ducimus minus suscipit autem? Libero unde sequi consequatur nisi et, vitae laboriosam iste
+			atque, nostrum
+			molestiae aperiam maiores. Harum porro ea quisquam facilis veritatis sapiente asperiores voluptas ratione sed.</p>
+	</main>
+	<script type="module">
+		import('./dist/index.es.js')
+			.catch((error) =>
+				import('https://unpkg.com/simple-smooth-scroll-by@latest/dist/index.es.js')
+			)
+			.then((library) => {
+				const { scrollBy } = library
+
+				const buttons = document.querySelectorAll('[data-by]')
+				buttons.forEach((button) => {
+					button.addEventListener('click', (event) => {
+						event.preventDefault()
+						const verticalOffset = parseInt(button.getAttribute('data-by'))
+						scrollBy(window, verticalOffset, 0)
+					})
+				})
+			})
+	</script>
+</body>
+
+</html>

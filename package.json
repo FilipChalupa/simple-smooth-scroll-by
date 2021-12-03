@@ -1,6 +1,6 @@
 {
 	"name": "simple-smooth-scroll-by",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "ScrollBy with fallback for legacy browsers.",
 	"main": "./dist/index.js",
 	"module": "./dist/index.es.js",
